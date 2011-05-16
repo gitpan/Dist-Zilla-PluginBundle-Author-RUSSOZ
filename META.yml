@@ -1,0 +1,26 @@
+---
+abstract: 'configure Dist::Zilla like RUSSOZ'
+author:
+  - 'Alexei Znamensky <russoz@cpan.org>'
+build_requires:
+  English: 0
+  File::Find: 0
+  File::Temp: 0
+  Test::More: 0.88
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110930'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Dist-Zilla-PluginBundle-Author-RUSSOZ
+requires:
+  Dist::Zilla: 4.102341
+  Dist::Zilla::Role::PluginBundle::Easy: 0
+  Moose: 0.99
+  Pod::Weaver::Config::Assembler: 0
+  namespace::autoclean: 0.09
+  namespace::clean: 0
+version: 0.001

@@ -1,0 +1,46 @@
+SYNOPSIS
+            # in dist.ini
+            [@Author::RUSSOZ]
+
+DESCRIPTION
+    "Dist::Zilla::PluginBundle::Author::RUSSOZ" provides shorthand for a
+    Dist::Zilla configuration approximately like:
+
+            [@Basic]
+
+            [MetaJSON]
+            [ReadmeFromPod]
+            [InstallGuide]
+            [GitFmtChanges]
+            max_age    = 365
+            tag_regexp = ^.*$
+            file_name  = Changes
+            log_format = short
+
+            [OurPkgVersion]
+            [AutoPrereqs]
+
+            [ReportVersions::Tiny]
+            [@TestingMania]
+
+            [Twitter]
+            tweet_url = http://search.cpan.org/~{{$AUTHOR_LC}}/{{$DIST}}
+            hash_tags = #perl #cpan
+            url_shortener = TinyURL
+
+USAGE
+    Just put "[@Author::RUSSOZ]" in your dist.ini. You can supply the
+    following options:
+
+    *   "no_twitter" says that releases of this module shouldn't be tweeted.
+
+    *   "twitter_tags" says which additional hash tags will be used in the
+        release tweet. The tags "#cpan" and "#perl" are always added.
+
+SEE ALSO
+    "Dist::Zilla"
+
+ACKNOWLEDGMENTS
+    Much of the first implementation was shamelessly copied from
+    Dist::Zilla::PluginBundle::Author::DOHERTY.
+
