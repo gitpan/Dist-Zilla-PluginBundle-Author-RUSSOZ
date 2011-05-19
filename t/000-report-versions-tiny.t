@@ -56,6 +56,7 @@ eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('Moose','0.99') };
 eval { $v .= pmver('Pod::Weaver::Config::Assembler','any version') };
+eval { $v .= pmver('Test::Mojibake','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('namespace::clean','any version') };

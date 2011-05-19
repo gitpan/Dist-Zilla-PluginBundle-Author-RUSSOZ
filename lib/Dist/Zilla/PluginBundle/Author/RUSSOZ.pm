@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -71,6 +71,7 @@ sub configure {
     $self->add_bundle(
         'TestingMania' => { disable => q{Test::CPAN::Changes,SynopsisTests}, }
     );
+    $self->add_plugins('MojibakeTests');
 
     $self->add_plugins(
         [
@@ -142,6 +143,11 @@ C<no_twitter> says that releases of this module shouldn't be tweeted.
 
 C<twitter_tags> says which B<additional> hash tags will be used in the
 release tweet. The tags C<#cpan> and C<#perl> are always added.
+
+=item *
+
+C<auto_prereqs> says whether the module will use C<AutoPrereqs> or not.
+Defaults to C<1>.
 
 =back
 

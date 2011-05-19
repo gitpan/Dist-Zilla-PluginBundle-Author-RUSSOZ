@@ -37,6 +37,9 @@ USAGE
     *   "twitter_tags" says which additional hash tags will be used in the
         release tweet. The tags "#cpan" and "#perl" are always added.
 
+    *   "auto_prereqs" says whether the module will use "AutoPrereqs" or
+        not. Defaults to 1.
+
 SEE ALSO
     "Dist::Zilla"
 
