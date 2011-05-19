@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -21,6 +21,13 @@ has twitter => (
         ( defined $_[0]->payload->{no_twitter}
               and $_[0]->payload->{no_twitter} == 1 ) ? 0 : 1;
     },
+);
+
+has auto_prereqs => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => 1,
 );
 
 has twitter_tags => (
@@ -55,10 +62,11 @@ sub configure {
         ],
 
         'OurPkgVersion',
-        'AutoPrereqs',
 
         'ReportVersions::Tiny',
     );
+
+    $self->add_plugins('AutoPrereqs') if $self->auto_prereqs;
 
     $self->add_bundle(
         'TestingMania' => { disable => q{Test::CPAN::Changes,SynopsisTests}, }
@@ -74,6 +82,7 @@ sub configure {
             }
         ]
     ) if ( $self->twitter );
+
     return;
 }
 

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Pod::Weaver configuration the way RUSSOZ does it
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 use Pod::Weaver::Config::Assembler;
 
