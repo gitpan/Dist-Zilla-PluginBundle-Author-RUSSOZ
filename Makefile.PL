@@ -15,7 +15,6 @@ my %WriteMakefileArgs = (
     'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
-    'Test::Mojibake' => '0',
     'Test::More' => '0.88'
   },
   'CONFIGURE_REQUIRES' => {
@@ -29,11 +28,13 @@ my %WriteMakefileArgs = (
     'Dist::Zilla' => '4.102341',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0.99',
+    'Pod::Elemental::Transformer::List' => '0',
     'Pod::Weaver::Config::Assembler' => '0',
+    'Pod::Weaver::Section::SeeAlso' => '0',
     'namespace::autoclean' => '0.09',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.004',
   'test' => {
     'TESTS' => 't/*.t'
   }

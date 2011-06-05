@@ -6,7 +6,6 @@ build_requires:
   English: 0
   File::Find: 0
   File::Temp: 0
-  Test::Mojibake: 0
   Test::More: 0.88
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -21,7 +20,12 @@ requires:
   Dist::Zilla: 4.102341
   Dist::Zilla::Role::PluginBundle::Easy: 0
   Moose: 0.99
+  Pod::Elemental::Transformer::List: 0
   Pod::Weaver::Config::Assembler: 0
+  Pod::Weaver::Section::SeeAlso: 0
   namespace::autoclean: 0.09
   namespace::clean: 0
-version: 0.003
+resources:
+  bugtracker: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ/issues
+  repository: git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
+version: 0.004
