@@ -4,7 +4,7 @@
       "Alexei Znamensky <russoz@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -22,11 +22,15 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla" : "4.102341",
+            "Dist::Zilla::PluginBundle::TestingMania" : "0.012",
             "Dist::Zilla::Role::PluginBundle::Easy" : 0,
             "Moose" : "0.99",
             "Pod::Elemental::Transformer::List" : 0,
             "Pod::Weaver::Config::Assembler" : 0,
-            "Pod::Weaver::Section::SeeAlso" : 0,
+            "Pod::Weaver::Plugin::Encoding" : "0.01",
+            "Pod::Weaver::Section::SeeAlso" : "1.002",
+            "Pod::Weaver::Section::Support" : "1.003",
+            "Pod::Weaver::Section::WarrantyDisclaimer" : "0.103511",
             "namespace::autoclean" : "0.09",
             "namespace::clean" : 0
          }
@@ -36,21 +40,20 @@
             "English" : 0,
             "File::Find" : 0,
             "File::Temp" : 0,
-            "Test::More" : "0.88"
+            "Test::More" : "0.88",
+            "perl" : "5.006"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
-      "bugtracker" : {
-         "web" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ/issues"
-      },
+      "bugtracker" : {},
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git",
          "web" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
       }
    },
-   "version" : "0.004"
+   "version" : "0.005"
 }
 

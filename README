@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
             # in dist.ini
@@ -31,7 +31,6 @@ DESCRIPTION
             [PodWeaver]
             config_plugin = @Author::RUSSOZ
 
-            [MojibakeTests]
             [@TestingMania]
             disable = Test::CPAN::Changes, SynopsisTests
 
@@ -171,7 +170,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ/issues>.
+    <http://rt.cpan.org>.
 
 DISCLAIMER OF WARRANTY
     BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY

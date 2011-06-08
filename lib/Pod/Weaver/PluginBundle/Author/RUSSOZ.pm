@@ -4,11 +4,14 @@ use strict;
 use warnings;
 
 # ABSTRACT: Pod::Weaver configuration the way RUSSOZ does it
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 use Pod::Weaver::Config::Assembler;
 use Pod::Elemental::Transformer::List;
-use Pod::Weaver::Section::SeeAlso;
+use Pod::Weaver::Section::SeeAlso 1.002;
+use Pod::Weaver::Section::Support 1.003;
+use Pod::Weaver::Section::WarrantyDisclaimer 0.103511;
+use Pod::Weaver::Plugin::Encoding 0.01;
 
 sub _exp { Pod::Weaver::Config::Assembler->expand_package( $_[0] ) } ## no critic
 
@@ -103,7 +106,7 @@ Pod::Weaver::PluginBundle::Author::RUSSOZ - Pod::Weaver configuration the way RU
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =for Pod::Coverage mvp_bundle_config
 
@@ -135,7 +138,7 @@ the same terms as the Perl 5 programming language system itself.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ/issues>.
+L<http://rt.cpan.org>.
 
 =head1 DISCLAIMER OF WARRANTY
 

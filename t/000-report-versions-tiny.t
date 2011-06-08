@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = "any version";
+    my $want = '5.006';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Dist::Zilla','4.102341') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::TestingMania','0.012') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle::Easy','any version') };
 eval { $v .= pmver('English','any version') };
 eval { $v .= pmver('ExtUtils::MakeMaker','6.30') };
@@ -57,7 +58,10 @@ eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('Moose','0.99') };
 eval { $v .= pmver('Pod::Elemental::Transformer::List','any version') };
 eval { $v .= pmver('Pod::Weaver::Config::Assembler','any version') };
-eval { $v .= pmver('Pod::Weaver::Section::SeeAlso','any version') };
+eval { $v .= pmver('Pod::Weaver::Plugin::Encoding','0.01') };
+eval { $v .= pmver('Pod::Weaver::Section::SeeAlso','1.002') };
+eval { $v .= pmver('Pod::Weaver::Section::Support','1.003') };
+eval { $v .= pmver('Pod::Weaver::Section::WarrantyDisclaimer','0.103511') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('namespace::clean','any version') };

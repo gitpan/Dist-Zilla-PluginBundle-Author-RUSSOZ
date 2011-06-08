@@ -4,12 +4,13 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
 
 use Dist::Zilla 4.102341;    # dzil authordeps
+use Dist::Zilla::PluginBundle::TestingMania 0.012;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
@@ -72,7 +73,6 @@ sub configure {
     $self->add_bundle(
         'TestingMania' => { disable => q{Test::CPAN::Changes,SynopsisTests}, }
     );
-    $self->add_plugins('MojibakeTests');
 
     $self->add_plugins(
         [
@@ -105,7 +105,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -135,7 +135,6 @@ a L<Dist::Zilla> configuration approximately like:
 	[PodWeaver]
 	config_plugin = @Author::RUSSOZ
 
-	[MojibakeTests]
 	[@TestingMania]
 	disable = Test::CPAN::Changes, SynopsisTests
 
@@ -314,7 +313,7 @@ the same terms as the Perl 5 programming language system itself.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ/issues>.
+L<http://rt.cpan.org>.
 
 =head1 DISCLAIMER OF WARRANTY
 

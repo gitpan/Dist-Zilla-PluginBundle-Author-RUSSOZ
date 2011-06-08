@@ -1,6 +1,19 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
+0.005
+-----
+
+commit 49ec3ef13f64f0c18724977504d0e22a1e376efd
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    new version of TestingMania includes Mojibake
+
+commit 44f64fcd2ede8658437065b09f52d49418f77e07
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    added version numbers
+
 ===================================
 End of changes in the last 365 days
 ===================================
