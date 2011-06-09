@@ -32,4 +32,4 @@ requires:
   namespace::clean: 0
 resources:
   repository: git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
-version: 0.005
+version: 0.006

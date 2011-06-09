@@ -1,8 +1,21 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-0.005
+0.006
 -----
+
+commit fa87fa07cdf281dfce31a3b90c949e6bcd98f4a5
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    bumped version
+
+commit c1cacddcbb7c69040177129afc0d9595d8797d58
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    added EnsureUniqueSections to Pod::Weaver plugins
+
+v0.005 2011-06-07
+-----------------
 
 commit 49ec3ef13f64f0c18724977504d0e22a1e376efd
 Author: Alexei Znamensky <russoz@cpan.org>
