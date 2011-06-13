@@ -19,6 +19,10 @@ meta-spec:
 name: Dist-Zilla-PluginBundle-Author-RUSSOZ
 requires:
   Dist::Zilla: 4.102341
+  Dist::Zilla::Plugin::InstallGuide: 0
+  Dist::Zilla::Plugin::MetaJSON: 0
+  Dist::Zilla::Plugin::ReadmeFromPod: 0
+  Dist::Zilla::Plugin::Signature: 0
   Dist::Zilla::PluginBundle::TestingMania: 0.012
   Dist::Zilla::Role::PluginBundle::Easy: 0
   Moose: 0.99
@@ -32,4 +36,4 @@ requires:
   namespace::clean: 0
 resources:
   repository: git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
-version: 0.006
+version: 0.007

@@ -1,8 +1,16 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-0.006
+0.007
 -----
+
+commit 061424ee349b15387fa4164de2e870a6e4ceb22b
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    added Signature plugin
+
+v0.006 2011-06-08
+-----------------
 
 commit fa87fa07cdf281dfce31a3b90c949e6bcd98f4a5
 Author: Alexei Znamensky <russoz@cpan.org>

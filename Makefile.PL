@@ -27,6 +27,10 @@ my %WriteMakefileArgs = (
   'NAME' => 'Dist::Zilla::PluginBundle::Author::RUSSOZ',
   'PREREQ_PM' => {
     'Dist::Zilla' => '4.102341',
+    'Dist::Zilla::Plugin::InstallGuide' => '0',
+    'Dist::Zilla::Plugin::MetaJSON' => '0',
+    'Dist::Zilla::Plugin::ReadmeFromPod' => '0',
+    'Dist::Zilla::Plugin::Signature' => '0',
     'Dist::Zilla::PluginBundle::TestingMania' => '0.012',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0.99',
@@ -39,7 +43,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0.09',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.006',
+  'VERSION' => '0.007',
   'test' => {
     'TESTS' => 't/*.t'
   }

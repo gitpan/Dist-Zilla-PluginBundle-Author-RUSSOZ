@@ -49,6 +49,10 @@ sub pmver {
 }
 
 eval { $v .= pmver('Dist::Zilla','4.102341') };
+eval { $v .= pmver('Dist::Zilla::Plugin::InstallGuide','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::MetaJSON','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeFromPod','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Signature','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::TestingMania','0.012') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle::Easy','any version') };
 eval { $v .= pmver('English','any version') };
