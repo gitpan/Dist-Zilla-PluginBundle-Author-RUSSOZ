@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.007'; # VERSION
+our $VERSION = '0.008'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -32,6 +32,17 @@ has signature => (
     default => sub {
         ( defined $_[0]->payload->{signature}
               and $_[0]->payload->{signature} == 1 ) ? 1 : 0;
+    },
+);
+
+has github => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        ( defined $_[0]->payload->{github} and $_[0]->payload->{github} == 0 )
+          ? 0
+          : 1;
     },
 );
 
@@ -82,6 +93,7 @@ sub configure {
         [ 'PodWeaver' => { config_plugin => '@Author::RUSSOZ' }, ]
     );
 
+    $self->add_plugins('GithubMeta')  if $self->github;
     $self->add_plugins('AutoPrereqs') if $self->auto_prereqs;
 
     $self->add_bundle(
@@ -121,7 +133,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
