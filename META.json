@@ -52,12 +52,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {},
+      "homepage" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git",
+         "url" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
          "web" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
       }
    },
-   "version" : "0.008"
+   "version" : "0.009"
 }
 

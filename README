@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.008
+    version 0.009
 
 SYNOPSIS
             # in dist.ini
@@ -155,7 +155,7 @@ SUPPORT
 
     <http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-      git clone git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
+      git clone http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
 
 AUTHOR
     Alexei Znamensky <russoz@cpan.org>

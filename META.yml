@@ -35,5 +35,6 @@ requires:
   namespace::autoclean: 0.09
   namespace::clean: 0
 resources:
-  repository: git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
-version: 0.008
+  homepage: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+  repository: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+version: 0.009

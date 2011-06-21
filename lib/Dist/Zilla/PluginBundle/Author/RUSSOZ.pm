@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.008'; # VERSION
+our $VERSION = '0.009'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -99,6 +99,7 @@ sub configure {
     $self->add_bundle(
         'TestingMania' => { disable => q{Test::CPAN::Changes,SynopsisTests}, }
     );
+    $self->add_plugins( 'Test::Pod::No404s' );
 
     $self->add_plugins(
         [
@@ -133,7 +134,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -323,7 +324,7 @@ from your repository :)
 
 L<http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-  git clone git://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
+  git clone http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
 
 =head1 AUTHOR
 
