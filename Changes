@@ -1,8 +1,16 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-0.009
+0.010
 -----
+
+commit 0c4a87d9ff82099f9d51d56a24988524aa2569d0
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    default is not to test HTTP 404 in POD links
+
+v0.009 2011-06-20
+-----------------
 
 commit 228e666ba954358d79104966d5103b46cbcf613b
 Author: Alexei Znamensky <russoz@cpan.org>

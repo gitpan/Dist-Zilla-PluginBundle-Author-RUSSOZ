@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.009'; # VERSION
+our $VERSION = '0.010'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -32,6 +32,16 @@ has signature => (
     default => sub {
         ( defined $_[0]->payload->{signature}
               and $_[0]->payload->{signature} == 1 ) ? 1 : 0;
+    },
+);
+
+has no404 => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        ( defined $_[0]->payload->{no404}
+              and $_[0]->payload->{no404} == 1 ) ? 1 : 0;
     },
 );
 
@@ -99,7 +109,7 @@ sub configure {
     $self->add_bundle(
         'TestingMania' => { disable => q{Test::CPAN::Changes,SynopsisTests}, }
     );
-    $self->add_plugins( 'Test::Pod::No404s' );
+    $self->add_plugins( 'Test::Pod::No404s' ) if ($self->no404 || $ENV{NO404});
 
     $self->add_plugins(
         [
@@ -134,7 +144,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
