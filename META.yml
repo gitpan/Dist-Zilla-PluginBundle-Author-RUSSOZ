@@ -37,4 +37,4 @@ requires:
 resources:
   homepage: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
   repository: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
-version: 0.010
+version: 0.011

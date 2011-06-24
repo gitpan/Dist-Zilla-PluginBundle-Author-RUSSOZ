@@ -3,11 +3,18 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.010
+    version 0.011
 
 SYNOPSIS
             # in dist.ini
             [@Author::RUSSOZ]
+            ; auto_prereqs = 1
+            ; github = 1
+            ; no404 = 0
+            ; task_weaver = 0
+            ; no_twitter = 0
+            ; twitter_tags = <empty>
+            ; signature = 1
 
 DESCRIPTION
     "Dist::Zilla::PluginBundle::Author::RUSSOZ" provides shorthand for a
@@ -25,31 +32,65 @@ DESCRIPTION
             log_format = short
 
             [OurPkgVersion]
+            [GithubMeta]                        ; if github = 1
             [AutoPrereqs]                       ; unless auto_prereqs = 0
 
             [ReportVersions::Tiny]
             [PodWeaver]
             config_plugin = @Author::RUSSOZ
 
+            ; if task_weaver =1
+            [TaskWeaver]
+
+            ; else (task_weaver = 0)
             [@TestingMania]
             disable = Test::CPAN::Changes, SynopsisTests
+            [Test::Pod::No404]
+
+            ; endif
 
             [Twitter]
             tweet_url = http://search.cpan.org/~{{$AUTHOR_LC}}/{{$DIST}}
-            hash_tags = #perl #cpan
+            hash_tags = #perl #cpan             ; plus tags in twitter_tags
             url_shortener = TinyURL
+
+            [Signature]                         ; if signature = 1
 
 USAGE
     Just put "[@Author::RUSSOZ]" in your dist.ini. You can supply the
     following options:
 
-    *   "no_twitter" says that releases of this module shouldn't be tweeted.
+    *   auto_prereqs
 
-    *   "twitter_tags" says which additional hash tags will be used in the
-        release tweet. The tags "#cpan" and "#perl" are always added.
+        Whether the module will use "AutoPrereqs" or not. Default = 1.
 
-    *   "auto_prereqs" says whether the module will use "AutoPrereqs" or
-        not. Defaults to 1.
+    *   github
+
+        If using github, enable "[GithubMeta]". Default = 1.
+
+    *   no404
+
+        Whether to use "[Test::Pod::No404]" in the distribution. Default =
+        0.
+
+    *   no_twitter
+
+        Releases of this module shouldn't be tweeted. Default = 0.
+
+    *   twitter_tags
+
+        Additional hash tags to be used in the release tweet. The tags
+        "#cpan" and "#perl" are always prepended.
+
+    *   signature
+
+        Whether to GPG sign the module or not. Default = 1.
+
+    *   task_weaver
+
+        Set to 1 if this is a "Task::" distribution. It will enable
+        "[TaskWeaver]" while disabling "[PodWeaver]" and all release tests.
+        Default = 0.
 
 ACKNOWLEDGMENTS
     Much of the first implementation was shamelessly copied from
