@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.011'; # VERSION
+our $VERSION = '0.012'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -122,6 +122,7 @@ sub configure {
             [ 'PodWeaver' => { config_plugin => '@Author::RUSSOZ' }, ],
         );
 
+        $self->add_plugins('Test::UseAllModules');
         $self->add_bundle( 'TestingMania' =>
               { disable => q{Test::CPAN::Changes,SynopsisTests}, } );
         $self->add_plugins('Test::Pod::No404s')
@@ -161,7 +162,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 SYNOPSIS
 
