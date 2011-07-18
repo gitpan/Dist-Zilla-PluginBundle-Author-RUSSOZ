@@ -7,11 +7,12 @@ build_requires:
   File::Find: 0
   File::Temp: 0
   Test::More: 0.88
+  Test::UseAllModules: 0
   perl: 5.006
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200008, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.200012, CPAN::Meta::Converter version 2.110930'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -34,7 +35,8 @@ requires:
   Pod::Weaver::Section::WarrantyDisclaimer: 0.103511
   namespace::autoclean: 0.09
   namespace::clean: 0
+  version: 0
 resources:
-  homepage: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
-  repository: http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
-version: 0.012
+  homepage: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+  repository: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+version: 0.013

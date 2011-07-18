@@ -11,6 +11,7 @@ dist.ini
 lib/Dist/Zilla/PluginBundle/Author/RUSSOZ.pm
 lib/Pod/Weaver/PluginBundle/Author/RUSSOZ.pm
 t/00-compile.t
+t/00-load.t
 t/000-report-versions-tiny.t
 t/author-critic.t
 t/release-dist-manifest.t

@@ -3,14 +3,16 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.012
+    version 0.013
 
 SYNOPSIS
             # in dist.ini
             [@Author::RUSSOZ]
+            ; fake = 0
+            ; version = none | auto | gitnext
             ; auto_prereqs = 1
             ; github = 1
-            ; no404 = 0
+            ; use_no404 = 0
             ; task_weaver = 0
             ; no_twitter = 0
             ; twitter_tags = <empty>
@@ -45,7 +47,7 @@ DESCRIPTION
             ; else (task_weaver = 0)
             [@TestingMania]
             disable = Test::CPAN::Changes, SynopsisTests
-            [Test::Pod::No404]
+            ; [Test::Pod::No404]
 
             ; endif
 
@@ -55,10 +57,17 @@ DESCRIPTION
             url_shortener = TinyURL
 
             [Signature]                         ; if signature = 1
+            [@Git]
 
 USAGE
     Just put "[@Author::RUSSOZ]" in your dist.ini. You can supply the
     following options:
+
+    *   version
+
+        How to handle version numbering. Possible values: none, auto (will
+        use Dist::Zilla::Plugin::AutoVersion), gitnext (will use
+        Dist::Zilla::Plugin::Git::NextVersion). Default = none.
 
     *   auto_prereqs
 
@@ -68,7 +77,7 @@ USAGE
 
         If using github, enable "[GithubMeta]". Default = 1.
 
-    *   no404
+    *   use_no404
 
         Whether to use "[Test::Pod::No404]" in the distribution. Default =
         0.
@@ -91,6 +100,12 @@ USAGE
         Set to 1 if this is a "Task::" distribution. It will enable
         "[TaskWeaver]" while disabling "[PodWeaver]" and all release tests.
         Default = 0.
+
+    *   fake
+
+        Set to 1 if this is a fake release. It will disable [UploadToCPAN]
+        and enable [FakeRelease]. It can also be enabled by setting the
+        environemnt variable "FAKE". Default = 0.
 
 ACKNOWLEDGMENTS
     Much of the first implementation was shamelessly copied from
@@ -194,9 +209,9 @@ SUPPORT
     contribute patches, please send me a diff or prod me to pull from your
     repository :)
 
-    <http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
+    <https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-      git clone http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+      git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
 
 AUTHOR
     Alexei Znamensky <russoz@cpan.org>

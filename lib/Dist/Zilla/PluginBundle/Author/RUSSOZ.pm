@@ -4,10 +4,11 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
+use version;
 
 use Dist::Zilla 4.102341;    # dzil authordeps
 use Dist::Zilla::PluginBundle::TestingMania 0.012;
@@ -18,6 +19,49 @@ use Dist::Zilla::Plugin::Signature;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
+has fake => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        return 1 if exists $ENV{FAKE};
+        ( defined $_[0]->payload->{fake} and $_[0]->payload->{fake} == 1 )
+          ? 1
+          : 0;
+    },
+);
+
+has version => (
+    is      => 'ro',
+    isa     => 'Str',
+    lazy    => 1,
+    default => sub { return ( $_[0]->payload->{version} or 'none' ) },
+);
+
+has _version_types => (
+    is      => 'ro',
+    isa     => 'HashRef[CodeRef]',
+    lazy    => 1,
+    builder => '_build_version_types',
+);
+
+sub _build_version_types {
+    my $self = shift;
+    return {
+        'none'    => sub { },
+        'auto'    => sub { $self->add_plugins('AutoVersion') },
+        'gitnext' => sub { $self->add_plugins('Git::NextVersion') },
+    };
+}
+
+sub _add_version {
+    my $self = shift;
+    my $spec = $self->version;
+    return unless exists $self->_version_types->{$spec};
+    $self->_version_types->{$spec}->();
+    return;
+}
+
 has auto_prereqs => (
     is      => 'ro',
     isa     => 'Bool',
@@ -25,14 +69,24 @@ has auto_prereqs => (
     default => 1,
 );
 
-has no404 => (
+has use_no404 => (
     is      => 'ro',
     isa     => 'Bool',
     lazy    => 1,
     default => sub {
-        ( defined $_[0]->payload->{no404} and $_[0]->payload->{no404} == 1 )
-          ? 1
-          : 0;
+        ( defined $_[0]->payload->{use_no404}
+              and $_[0]->payload->{use_no404} == 1 ) ? 1 : 0;
+    },
+);
+
+has git => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        ( defined $_[0]->payload->{git} and $_[0]->payload->{git} == 0 )
+          ? 0
+          : 1;
     },
 );
 
@@ -41,6 +95,7 @@ has github => (
     isa     => 'Bool',
     lazy    => 1,
     default => sub {
+        return 0 unless $_[0]->git;
         ( defined $_[0]->payload->{github} and $_[0]->payload->{github} == 0 )
           ? 0
           : 1;
@@ -62,11 +117,8 @@ has twitter_tags => (
     isa     => 'Str',
     lazy    => 1,
     default => sub {
-        my @t =
-          defined( $_[0]->payload->{twitter_tags} )
-          ? ( $_[0]->payload->{twitter_tags} )
-          : ();
-        return join( ' ', q{#cpan}, q{#perl}, @t );
+        my $t = $_[0]->payload->{twitter_tags} || '';
+        return join( ' ', q{#cpan}, q{#perl}, $t );
     },
 );
 
@@ -93,12 +145,23 @@ has signature => (
 sub configure {
     my $self = shift;
 
-    $self->add_bundle('Basic');
+    # Basic sans upload
+    $self->add_plugins(
+        'GatherDir', 'PruneCruft', 'ManifestSkip', 'MetaYAML',
+        'License',   'ExtraTests', 'ExecDir',      'ShareDir',
+        'MakeMaker', 'Manifest',   'TestRelease',  'ConfirmRelease',
+    );
+    $self->fake
+      ? $self->add_plugins('FakeRelease')
+      : $self->add_plugins('UploadToCPAN');
+
+    $self->_add_version();
 
     $self->add_plugins(
         'MetaJSON',
         'ReadmeFromPod',
         'InstallGuide',
+        'OurPkgVersion',
         [
             'GitFmtChanges' => {
                 max_age    => 365,
@@ -107,8 +170,6 @@ sub configure {
                 log_format => q{short},
             }
         ],
-
-        'OurPkgVersion',
     );
 
     $self->add_plugins('GithubMeta')  if $self->github;
@@ -126,7 +187,7 @@ sub configure {
         $self->add_bundle( 'TestingMania' =>
               { disable => q{Test::CPAN::Changes,SynopsisTests}, } );
         $self->add_plugins('Test::Pod::No404s')
-          if ( $self->no404 || $ENV{NO404} );
+          if ( $self->use_no404 || $ENV{NO404} );
     }
 
     $self->add_plugins(
@@ -138,9 +199,10 @@ sub configure {
                 url_shortener => 'TinyURL',
             }
         ]
-    ) if ( $self->twitter );
+    ) if ( $self->twitter and not $self->fake );
 
     $self->add_plugins('Signature') if $self->signature;
+    $self->add_bundle('Git')        if $self->git;
 
     return;
 }
@@ -162,15 +224,17 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 
 	# in dist.ini
 	[@Author::RUSSOZ]
+	; fake = 0
+	; version = none | auto | gitnext
 	; auto_prereqs = 1
 	; github = 1
-	; no404 = 0
+	; use_no404 = 0
 	; task_weaver = 0
 	; no_twitter = 0
 	; twitter_tags = <empty>
@@ -206,7 +270,7 @@ a L<Dist::Zilla> configuration approximately like:
 	; else (task_weaver = 0)
 	[@TestingMania]
 	disable = Test::CPAN::Changes, SynopsisTests
-	[Test::Pod::No404]
+	; [Test::Pod::No404]
 
 	; endif
 
@@ -216,6 +280,7 @@ a L<Dist::Zilla> configuration approximately like:
 	url_shortener = TinyURL
 
 	[Signature]                         ; if signature = 1
+	[@Git]
 
 =head1 USAGE
 
@@ -223,6 +288,15 @@ Just put C<[@Author::RUSSOZ]> in your F<dist.ini>. You can supply the following
 options:
 
 =over 4
+
+=item *
+
+version
+
+How to handle version numbering. Possible values: none,
+auto (will use L<Dist::Zilla::Plugin::AutoVersion>),
+gitnext (will use Dist::Zilla::Plugin::Git::NextVersion).
+Default = none.
 
 =item *
 
@@ -238,7 +312,7 @@ If using github, enable C<[GithubMeta]>. Default = 1.
 
 =item *
 
-no404
+use_no404
 
 Whether to use C<[Test::Pod::No404]> in the distribution. Default = 0.
 
@@ -268,6 +342,14 @@ task_weaver
 Set to 1 if this is a C<Task::> distribution. It will enable C<[TaskWeaver]>
 while disabling C<[PodWeaver]> and all release tests. Default = 0.
 
+=item *
+
+fake
+
+Set to 1 if this is a fake release. It will disable [UploadToCPAN] and
+enable [FakeRelease]. It can also be enabled by setting the environemnt
+variable C<FAKE>. Default = 0.
+
 =back
 
 =for Pod::Coverage configure
@@ -285,7 +367,7 @@ Please see those modules/websites for more information related to this module.
 
 =item *
 
-L<C<L<Dist::Zilla>>|C<L<Dist::Zilla>>>
+L<C<< L<Dist::Zilla> >>|C<< L<Dist::Zilla> >>>
 
 =back
 
@@ -397,9 +479,9 @@ The code is open to the world, and available for you to hack on. Please feel fre
 with it, or whatever. If you want to contribute patches, please send me a diff or prod me to pull
 from your repository :)
 
-L<http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
+L<https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-  git clone http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+  git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
 
 =head1 AUTHOR
 

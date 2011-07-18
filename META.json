@@ -4,7 +4,7 @@
       "Alexei Znamensky <russoz@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200008, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "Dist::Zilla version 4.200012, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -36,7 +36,8 @@
             "Pod::Weaver::Section::Support" : "1.003",
             "Pod::Weaver::Section::WarrantyDisclaimer" : "0.103511",
             "namespace::autoclean" : "0.09",
-            "namespace::clean" : 0
+            "namespace::clean" : 0,
+            "version" : 0
          }
       },
       "test" : {
@@ -45,6 +46,7 @@
             "File::Find" : 0,
             "File::Temp" : 0,
             "Test::More" : "0.88",
+            "Test::UseAllModules" : 0,
             "perl" : "5.006"
          }
       }
@@ -52,13 +54,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {},
-      "homepage" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
+      "homepage" : "https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
       "repository" : {
          "type" : "git",
-         "url" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
-         "web" : "http://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
+         "url" : "https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ",
+         "web" : "https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
       }
    },
-   "version" : "0.012"
+   "version" : "0.013"
 }
 

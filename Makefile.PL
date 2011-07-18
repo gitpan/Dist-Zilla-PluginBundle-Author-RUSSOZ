@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
     'File::Find' => '0',
     'File::Temp' => '0',
     'Test::More' => '0.88',
+    'Test::UseAllModules' => '0',
     'perl' => '5.006'
   },
   'CONFIGURE_REQUIRES' => {
@@ -41,9 +42,10 @@ my %WriteMakefileArgs = (
     'Pod::Weaver::Section::Support' => '1.003',
     'Pod::Weaver::Section::WarrantyDisclaimer' => '0.103511',
     'namespace::autoclean' => '0.09',
-    'namespace::clean' => '0'
+    'namespace::clean' => '0',
+    'version' => '0'
   },
-  'VERSION' => '0.012',
+  'VERSION' => '0.013',
   'test' => {
     'TESTS' => 't/*.t'
   }

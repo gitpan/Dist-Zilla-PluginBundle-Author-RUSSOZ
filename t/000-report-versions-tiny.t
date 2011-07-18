@@ -67,8 +67,10 @@ eval { $v .= pmver('Pod::Weaver::Section::SeeAlso','1.002') };
 eval { $v .= pmver('Pod::Weaver::Section::Support','1.003') };
 eval { $v .= pmver('Pod::Weaver::Section::WarrantyDisclaimer','0.103511') };
 eval { $v .= pmver('Test::More','0.88') };
+eval { $v .= pmver('Test::UseAllModules','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('namespace::clean','any version') };
+eval { $v .= pmver('version','any version') };
 
 
 

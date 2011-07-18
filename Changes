@@ -1,8 +1,21 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-0.012
+0.013
 -----
+
+commit 977a08fa46f43d6181a97fa220380a9338e85801
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    added version and fake-release functionalities
+
+commit e0944a66331e46c917483439239c10bbf5851261
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    renamed the no404 attr to use_no404
+
+v0.012 2011-06-30
+-----------------
 
 commit e7d2bd904adee5e96eba2ecb69b4755fbc6bc227
 Author: Alexei Znamensky <russoz@cpan.org>
