@@ -22,6 +22,7 @@ requires:
   Dist::Zilla: 4.102341
   Dist::Zilla::Plugin::InstallGuide: 0
   Dist::Zilla::Plugin::MetaJSON: 0
+  Dist::Zilla::Plugin::PerlTidy: 0.11
   Dist::Zilla::Plugin::ReadmeFromPod: 0
   Dist::Zilla::Plugin::Signature: 0
   Dist::Zilla::PluginBundle::TestingMania: 0.012
@@ -39,4 +40,4 @@ requires:
 resources:
   homepage: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
   repository: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
-version: 0.014
+version: 0.015

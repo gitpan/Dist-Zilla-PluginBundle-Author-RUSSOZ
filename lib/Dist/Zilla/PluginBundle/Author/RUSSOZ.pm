@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.015';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -15,6 +15,7 @@ use Dist::Zilla::PluginBundle::TestingMania 0.012;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::InstallGuide;
+use Dist::Zilla::Plugin::PerlTidy 0.11;
 use Dist::Zilla::Plugin::Signature;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -163,6 +164,7 @@ sub configure {
         'MetaJSON',
         'ReadmeFromPod',
         'InstallGuide',
+        'PerlTidy',
         [
             'GitFmtChanges' => {
                 max_age    => 365,
@@ -225,7 +227,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 SYNOPSIS
 
@@ -529,5 +531,4 @@ DAMAGES.
 
 
 __END__
-
 

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Pod::Weaver configuration the way RUSSOZ does it
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.015';    # VERSION
 
 use Pod::Weaver::Config::Assembler;
 
@@ -112,7 +112,7 @@ Pod::Weaver::PluginBundle::Author::RUSSOZ - Pod::Weaver configuration the way RU
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =for Pod::Coverage mvp_bundle_config
 
@@ -173,5 +173,4 @@ DAMAGES.
 
 
 __END__
-
 

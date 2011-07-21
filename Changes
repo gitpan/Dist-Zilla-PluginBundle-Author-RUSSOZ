@@ -1,8 +1,16 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-0.014
+0.015
 -----
+
+commit 41765e29f613b0f0f44d68000ef9c05de88bcc9a
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    [PerlTidy] 0.11 fixes a problem with ReportVersions::Tiny
+
+v0.014 2011-07-18
+-----------------
 
 commit 56840e7b637d3c5dd4214055f1d9c6c28e27d499
 Author: Alexei Znamensky <russoz@cpan.org>

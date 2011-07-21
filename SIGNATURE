@@ -14,49 +14,49 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 4f71ec795331363c48ec78c76b78fcd2b7a74215 Changes
+SHA1 b55154780bdfafae5291b69c21f318326a9539f3 Changes
 SHA1 0ab284de2913c225a657099193b5b5d9feb896fc INSTALL
 SHA1 06abad21694ddb03c0fd03ba52d6d652ca43856e LICENSE
 SHA1 a7b25dc637f38312f970e597a8d2bf85c18409ce MANIFEST
-SHA1 6545b1fdf3422258ea62354b050b342020d3d744 META.json
-SHA1 b8f4b1dd2d7e567e32c5be12d39d1161c7352ab2 META.yml
-SHA1 a1ec70f7251609fde850cda19e6f759f8740f87d Makefile.PL
-SHA1 1b3b36ac600d466d8b9d63111afdb39c5b17bf00 README
+SHA1 1dfa873077b7c32362bcf71a2393bc18afc21c77 META.json
+SHA1 b910a9da3af2f836419c211fc487eda7265f6356 META.yml
+SHA1 c4c4d28b14e9b5486a8bd74733d412a3f3691536 Makefile.PL
+SHA1 fed3ae98358c7bb25dc40536fb71a86b23bd9fa3 README
 SHA1 9b68e4be2620cc8530b481dcec74ee5a95390b95 dist.ini
-SHA1 5dafe51acef9db0d58da4ae8ae5e3e21450464b4 lib/Dist/Zilla/PluginBundle/Author/RUSSOZ.pm
-SHA1 1a85bdfdfc0227dd2141042ee6d1cae0748d1e22 lib/Pod/Weaver/PluginBundle/Author/RUSSOZ.pm
-SHA1 ca41ffd5806caaf9da5dceea1320ae662780e9fc t/00-compile.t
-SHA1 34fa2375756a937d21cf46ff2487b7424dfc54d9 t/00-load.t
-SHA1 fa975a814fa2cffd4b9ec254887b7d047f9a6bd7 t/000-report-versions-tiny.t
-SHA1 fa45d6e6ab1cd421349dea4ef527bfd5cdc8a09e t/author-critic.t
-SHA1 87768d177f8c2e2df9c591cde869e7c8a245555e t/release-dist-manifest.t
-SHA1 bf8570ef6888d79ca6a0c9e21b206b904b0775e2 t/release-distmeta.t
-SHA1 a032c41ef6887fab1b900669c2d304fab46680e2 t/release-eol.t
-SHA1 961a1e2c92d836c8cad2d34b784cbc75345dec63 t/release-kwalitee.t
-SHA1 6bf1766bfb8d47dccad1fc80c6ea867a3dd7ad1f t/release-meta-json.t
-SHA1 54ed25287b7e1c9ff328eaf126d438438c8a1d48 t/release-minimum-version.t
-SHA1 8556b1e3dda0d4c71ce3ab34261c4f80a585e56c t/release-mojibake.t
-SHA1 455d1dd1867212a665ad5ea4126b572411de300c t/release-no-tabs.t
-SHA1 9433c240fe590bc404ab68ff63984df763e347ed t/release-pod-coverage.t
-SHA1 4f2933df3566db6f337817aa885889deb213960b t/release-pod-linkcheck.t
-SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
-SHA1 3bb783b8a31b5eaff916bcb8bf7b348ee340ecb5 t/release-portability.t
-SHA1 13308c6d118988d59e1c257d3179b839c549ff12 t/release-test-version.t
-SHA1 d7221447937ab93002a123801def7be09748c106 t/release-unused-vars.t
+SHA1 986554abaeec0a4a0be2837ec20150b0b0b19558 lib/Dist/Zilla/PluginBundle/Author/RUSSOZ.pm
+SHA1 c4b78019bdcd3417f29c05e1f9d94744ed7f494c lib/Pod/Weaver/PluginBundle/Author/RUSSOZ.pm
+SHA1 dd729107f22582796aa0af9acb0f1e975f2251a5 t/00-compile.t
+SHA1 86cd488198ef1835477613f6a2256994986660aa t/00-load.t
+SHA1 651ebd2d50b97704d5a611d6dd964083a5343ee6 t/000-report-versions-tiny.t
+SHA1 f214de96cfe8b70da71201ab8859bb32cbdafe1d t/author-critic.t
+SHA1 48d42cc9f55d5ce8ae812dab536a9d17f1c3f98d t/release-dist-manifest.t
+SHA1 9e4c697537049f3151d38c81d5080be36b600771 t/release-distmeta.t
+SHA1 52f8153d160cb76d2ba52d0a9c8e8dff928145ee t/release-eol.t
+SHA1 083d9cf27e0bc6a123241fb0a361a2c029983b0c t/release-kwalitee.t
+SHA1 d10a4c4f4a6c10595f86bd7acf935ae72354f8d0 t/release-meta-json.t
+SHA1 978fcdcd038d17814e4a2429f19795a77894f1a1 t/release-minimum-version.t
+SHA1 b567cfd8c64cdcda2a465f38a1dc2fd971904ee4 t/release-mojibake.t
+SHA1 a95be7f18c2443b36947e6a2888ff14742899350 t/release-no-tabs.t
+SHA1 ecd6305379975ecc5ce20f4c3e76bfcfe462e2d4 t/release-pod-coverage.t
+SHA1 c3bec8aa8475c5ec46a0bad17a20d44d4ea1b1b8 t/release-pod-linkcheck.t
+SHA1 7eb3492f9c47f10f80d4f285e96536e9192026dc t/release-pod-syntax.t
+SHA1 4bca0ddd8e339fe70776a13cb4551864fbe09797 t/release-portability.t
+SHA1 dd1999e108eb2093fa41692a0a72b4b84ce8ef4e t/release-test-version.t
+SHA1 731040bf250fd7f91217bde7998666bc60ca8e90 t/release-unused-vars.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQIcBAEBAgAGBQJOJOtEAAoJEMZvtcdxyp88B8cQALzo1GuOwAVVlIvAWIi/Zl1a
-CsVQ9uVl2G236Ob0NbzXt5HFVcL9La8YA6S9euVPC+7OnV00hxCVLuOOARKbtlRd
-0Nt4rciccT1C7zggmO+FYropAvpDkt27AX3FW1hQo98gGOwwYSBzuPvjH3oPQFpw
-1QJYp3FkIzcYGO2LoITxIh0sJvL+yczNK6JnaUkXmPNFhghdj1pVXfYuLtXbBaIz
-3iogjwWoTxXnIaYO1Hal56rFK320r/soLdxcek0qdKoZLsiWRY0QajbOeiVIhCKL
-8sg1KNfBtY7quBPrbrH4R8aoVyw4UuBq6hPxZ+ApSi2g3/W2jtVtWdeJUohmV2l3
-A7wbm7Uq5okIt/T048kHVxssdoMO+3M8qVR1CCRplegNVkX/cRZtuLSi0EMWp2jm
-nRizUA2Lis4DNzZ0QleeVmoHz3BrbeX+uKpZLMfgv2/Dg0Tmp2EMaXRIWqtaOS1S
-qbF+JlUrXCVuZj3/DcAA8dVylNLPqUM5n6VsKpmv+i/HlKlUyJqEhEyPDAxqZTc5
-8kKUI4wT7AbLlsEvLjz5WSSfaqcozj0so6BKrt6KwkVzloPXfyKdb0gSn6gVL27q
-X6Me9YOkijmP+RX/ZA3G29xN5wIGH7/hTEaBGEEYb5sflIV9GZCwqjqRpdjJiSun
-CDtODfwsSz9CQ6bAqR+O
-=0Ulw
+iQIcBAEBAgAGBQJOKKt2AAoJEMZvtcdxyp88vuAP/AoZo3uq4U3SE/cviq65pt7m
+9lHyfS3Bmu5N4leVz9eVCH5S3d44NtfG09SdHSP3+QoClThXhATVBgG2DJ+ph6l3
+7BXyKLEErLWqjT1OoM6k2hpQaMx0Ekciv2CqM3aWPJ4M1h8PtWR/rPMPReC4vu0i
+Y/q/jMgpxY45WOrKINitq6MFLfcHb2yi3lUm6wMt3VsGRS+JuBt7eWhB6GEbJlRS
+1shl/lzfqJRGLmjKx10z/2kR7qhhDQzoFPim9K65Lpa9TnPK7xSOJD3TijHPRcsy
+irKqQp3XFeFI8moaIH5f5i8ZQKid8T375FHFhHaq0WTalxgxMEM9oILHWuOwDrDi
+Oxum/zrn1GkFjSS32KR8ozt/4fJrWDLfHcgUf+ekygjG6Rxq5ZnwsdiMwmM8BCmh
+Oi25R8Sq3At/U0ZwphDkFLSGDI7U6q4tifWG3SFG75tSCFVt65lk76yNhrIksyYr
+7v7IDvV0nK5BYOIgcb/9jgafF7i5x92cD2S4Ukhp9tTVkAQYUsQdZidPxlgyGsA7
+r5d+L0LyBhnzj0B+PXTKSaYSL8Su1etS6LPFJnCFht7bGtGTTvbmpo3dYro7BgoM
+Jh2SRG5lMVl0zC39AXe14mYjKkXA5Ob8wBpYEEPfTOcPgdlMs3uutDaXcU8lnZQT
+WieC2tS9CzOcHoMECVKa
+=1LNZ
 -----END PGP SIGNATURE-----

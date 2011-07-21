@@ -30,6 +30,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla' => '4.102341',
     'Dist::Zilla::Plugin::InstallGuide' => '0',
     'Dist::Zilla::Plugin::MetaJSON' => '0',
+    'Dist::Zilla::Plugin::PerlTidy' => '0.11',
     'Dist::Zilla::Plugin::ReadmeFromPod' => '0',
     'Dist::Zilla::Plugin::Signature' => '0',
     'Dist::Zilla::PluginBundle::TestingMania' => '0.012',
@@ -45,7 +46,7 @@ my %WriteMakefileArgs = (
     'namespace::clean' => '0',
     'version' => '0'
   },
-  'VERSION' => '0.014',
+  'VERSION' => '0.015',
   'test' => {
     'TESTS' => 't/*.t'
   }
