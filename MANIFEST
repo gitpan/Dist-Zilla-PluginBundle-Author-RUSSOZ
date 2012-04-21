@@ -14,9 +14,9 @@ t/00-compile.t
 t/00-load.t
 t/000-report-versions-tiny.t
 t/author-critic.t
+t/author-test-eol.t
 t/release-dist-manifest.t
 t/release-distmeta.t
-t/release-eol.t
 t/release-kwalitee.t
 t/release-meta-json.t
 t/release-minimum-version.t

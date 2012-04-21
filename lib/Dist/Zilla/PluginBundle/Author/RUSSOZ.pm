@@ -4,19 +4,11 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.015';    # VERSION
+our $VERSION = '0.016';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
 use version;
-
-use Dist::Zilla 4.102341;    # dzil authordeps
-use Dist::Zilla::PluginBundle::TestingMania 0.012;
-use Dist::Zilla::Plugin::MetaJSON;
-use Dist::Zilla::Plugin::ReadmeFromPod;
-use Dist::Zilla::Plugin::InstallGuide;
-use Dist::Zilla::Plugin::PerlTidy 0.11;
-use Dist::Zilla::Plugin::Signature;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
@@ -188,7 +180,7 @@ sub configure {
 
         $self->add_plugins('Test::UseAllModules');
         $self->add_bundle( 'TestingMania' =>
-              { disable => q{Test::CPAN::Changes,SynopsisTests}, } );
+              { disable => q{Test::CPAN::Changes,Test::Synopsis}, } );
         $self->add_plugins('Test::Pod::No404s')
           if ( $self->use_no404 || $ENV{NO404} );
     }
@@ -227,7 +219,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 SYNOPSIS
 
@@ -374,7 +366,7 @@ L<C<< L<Dist::Zilla> >>|C<< L<Dist::Zilla> >>>
 
 =back
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
 
@@ -403,7 +395,7 @@ L<http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
 AnnoCPAN
 
-The AnnoCPAN is a website that allows community annonations of Perl module documentation.
+The AnnoCPAN is a website that allows community annotations of Perl module documentation.
 
 L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
@@ -443,7 +435,7 @@ L<http://www.cpantesters.org/distro/D/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
 CPAN Testers Matrix
 
-The CPAN Testers Matrix is a website that provides a visual way to determine what Perls/platforms PASSed for a distribution.
+The CPAN Testers Matrix is a website that provides a visual overview of the test results for a distribution on various Perls/platforms.
 
 L<http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
@@ -484,7 +476,7 @@ from your repository :)
 
 L<https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-  git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+  git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
 
 =head1 AUTHOR
 
@@ -499,10 +491,8 @@ the same terms as the Perl 5 programming language system itself.
 
 =head1 BUGS AND LIMITATIONS
 
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+You can make new bug reports, and view existing ones, through the
+web interface at L<http://rt.cpan.org>.
 
 =head1 DISCLAIMER OF WARRANTY
 

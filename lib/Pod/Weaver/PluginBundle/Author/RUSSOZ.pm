@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Pod::Weaver configuration the way RUSSOZ does it
-our $VERSION = '0.015';    # VERSION
+our $VERSION = '0.016';    # VERSION
 
 use Pod::Weaver::Config::Assembler;
 
@@ -112,7 +112,7 @@ Pod::Weaver::PluginBundle::Author::RUSSOZ - Pod::Weaver configuration the way RU
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =for Pod::Coverage mvp_bundle_config
 
@@ -141,10 +141,8 @@ the same terms as the Perl 5 programming language system itself.
 
 =head1 BUGS AND LIMITATIONS
 
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+You can make new bug reports, and view existing ones, through the
+web interface at L<http://rt.cpan.org>.
 
 =head1 DISCLAIMER OF WARRANTY
 

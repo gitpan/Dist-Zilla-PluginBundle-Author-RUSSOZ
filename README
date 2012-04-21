@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.015
+    version 0.016
 
 SYNOPSIS
             # in dist.ini
@@ -136,7 +136,7 @@ SUPPORT
 
     *   AnnoCPAN
 
-        The AnnoCPAN is a website that allows community annonations of Perl
+        The AnnoCPAN is a website that allows community annotations of Perl
         module documentation.
 
         <http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-RUSSOZ>
@@ -173,8 +173,8 @@ SUPPORT
 
     *   CPAN Testers Matrix
 
-        The CPAN Testers Matrix is a website that provides a visual way to
-        determine what Perls/platforms PASSed for a distribution.
+        The CPAN Testers Matrix is a website that provides a visual overview
+        of the test results for a distribution on various Perls/platforms.
 
         <http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-Author-
         RUSSOZ>
@@ -211,7 +211,7 @@ SUPPORT
 
     <https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ>
 
-      git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
+      git clone https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
 
 AUTHOR
     Alexei Znamensky <russoz@cpan.org>
@@ -223,10 +223,8 @@ COPYRIGHT AND LICENSE
     the same terms as the Perl 5 programming language system itself.
 
 BUGS AND LIMITATIONS
-    No bugs have been reported.
-
-    Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+    You can make new bug reports, and view existing ones, through the web
+    interface at <http://rt.cpan.org>.
 
 DISCLAIMER OF WARRANTY
     BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
