@@ -12,7 +12,6 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "configure Dist::Zilla like RUSSOZ",
   "AUTHOR" => "Alexei Znamensky <russoz\@cpan.org>",
   "BUILD_REQUIRES" => {
-    "English" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
     "Test::More" => "0.88",
@@ -48,6 +47,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::PluginBundle::TestingMania" => "0.012",
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Moose" => "0.99",
+    "Pod::Elemental" => "0.102362",
     "Pod::Elemental::Transformer::List" => 0,
     "Pod::Weaver::Config::Assembler" => 0,
     "Pod::Weaver::Plugin::Encoding" => "0.01",
@@ -60,7 +60,7 @@ my %WriteMakefileArgs = (
     "version" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.016",
+  "VERSION" => "0.017",
   "test" => {
     "TESTS" => "t/*.t"
   }

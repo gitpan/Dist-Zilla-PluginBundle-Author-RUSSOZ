@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.016
+    version 0.017
 
 SYNOPSIS
             # in dist.ini
@@ -14,7 +14,7 @@ SYNOPSIS
             ; github = 1
             ; use_no404 = 0
             ; task_weaver = 0
-            ; no_twitter = 0
+            ; twitter = 0
             ; twitter_tags = <empty>
             ; signature = 1
 
@@ -82,9 +82,11 @@ USAGE
         Whether to use "[Test::Pod::No404]" in the distribution. Default =
         0.
 
-    *   no_twitter
+    *   twitter
 
-        Releases of this module shouldn't be tweeted. Default = 0.
+        Releases of this module should be tweeted. Actually this is not
+        working properly since twitter.com moved to mandatory OAuth
+        authetication. Default = 0.
 
     *   twitter_tags
 

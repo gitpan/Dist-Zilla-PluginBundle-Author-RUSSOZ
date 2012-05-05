@@ -1,7 +1,20 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-v0.016 2012-04-21
+v0.017 2012-05-05
+-----------------
+
+commit bfae4ee8354308ee5d90e54b0f8b954e2ad32d50
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    twitter is off by default now
+
+commit 0bf54f56765c6753871c14c9931c9a195ca24ab9
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    dependency on version 0.102362 of Pod::Elemental
+
+V0.016 2012-04-21
 -----------------
 
 commit 841a3078939d73e67329b71a4bf55c41563ad497

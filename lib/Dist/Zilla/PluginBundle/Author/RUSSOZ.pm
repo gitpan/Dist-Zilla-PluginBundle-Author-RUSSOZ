@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.016';    # VERSION
+our $VERSION = '0.017';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -101,8 +101,9 @@ has twitter => (
     isa     => 'Bool',
     lazy    => 1,
     default => sub {
-        ( defined $_[0]->payload->{no_twitter}
-              and $_[0]->payload->{no_twitter} == 1 ) ? 0 : 1;
+        ( defined $_[0]->payload->{twitter} and $_[0]->payload->{twitter} == 1 )
+          ? 1
+          : 0;
     },
 );
 
@@ -219,7 +220,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =head1 SYNOPSIS
 
@@ -231,7 +232,7 @@ version 0.016
 	; github = 1
 	; use_no404 = 0
 	; task_weaver = 0
-	; no_twitter = 0
+	; twitter = 0
 	; twitter_tags = <empty>
 	; signature = 1
 
@@ -313,9 +314,10 @@ Whether to use C<[Test::Pod::No404]> in the distribution. Default = 0.
 
 =item *
 
-no_twitter
+twitter
 
-Releases of this module shouldn't be tweeted. Default = 0.
+Releases of this module should be tweeted. Actually this is not working properly
+since twitter.com moved to mandatory OAuth authetication. Default = 0.
 
 =item *
 

@@ -4,7 +4,7 @@
       "Alexei Znamensky <russoz@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300014, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300016, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -43,6 +43,7 @@
             "Dist::Zilla::PluginBundle::TestingMania" : "0.012",
             "Dist::Zilla::Role::PluginBundle::Easy" : "0",
             "Moose" : "0.99",
+            "Pod::Elemental" : "0.102362",
             "Pod::Elemental::Transformer::List" : "0",
             "Pod::Weaver::Config::Assembler" : "0",
             "Pod::Weaver::Plugin::Encoding" : "0.01",
@@ -58,7 +59,6 @@
       },
       "test" : {
          "requires" : {
-            "English" : "0",
             "File::Find" : "0",
             "File::Temp" : "0",
             "Test::More" : "0.88",
@@ -76,6 +76,6 @@
          "web" : "https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
       }
    },
-   "version" : "0.016"
+   "version" : "0.017"
 }
 
