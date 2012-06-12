@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.017';    # VERSION
+our $VERSION = '0.018';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -96,27 +96,6 @@ has github => (
     },
 );
 
-has twitter => (
-    is      => 'ro',
-    isa     => 'Bool',
-    lazy    => 1,
-    default => sub {
-        ( defined $_[0]->payload->{twitter} and $_[0]->payload->{twitter} == 1 )
-          ? 1
-          : 0;
-    },
-);
-
-has twitter_tags => (
-    is      => 'ro',
-    isa     => 'Str',
-    lazy    => 1,
-    default => sub {
-        my $t = $_[0]->payload->{twitter_tags} || '';
-        return join( ' ', q{#cpan}, q{#perl}, $t );
-    },
-);
-
 has task_weaver => (
     is      => 'ro',
     isa     => 'Bool',
@@ -186,17 +165,6 @@ sub configure {
           if ( $self->use_no404 || $ENV{NO404} );
     }
 
-    $self->add_plugins(
-        [
-            'Twitter' => {
-                hash_tags => $self->twitter_tags,
-                tweet_url =>
-                  q(http://search.cpan.org/~{{$AUTHOR_LC}}/{{$DIST}}),
-                url_shortener => 'TinyURL',
-            }
-        ]
-    ) if ( $self->twitter and not $self->fake );
-
     $self->add_plugins('Signature') if $self->signature;
     $self->add_bundle('Git')        if $self->git;
 
@@ -220,7 +188,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 SYNOPSIS
 
@@ -232,8 +200,6 @@ version 0.017
 	; github = 1
 	; use_no404 = 0
 	; task_weaver = 0
-	; twitter = 0
-	; twitter_tags = <empty>
 	; signature = 1
 
 =head1 DESCRIPTION
@@ -269,11 +235,6 @@ a L<Dist::Zilla> configuration approximately like:
 	; [Test::Pod::No404]
 
 	; endif
-
-	[Twitter]
-	tweet_url = http://search.cpan.org/~{{$AUTHOR_LC}}/{{$DIST}}
-	hash_tags = #perl #cpan             ; plus tags in twitter_tags
-	url_shortener = TinyURL
 
 	[Signature]                         ; if signature = 1
 	[@Git]
@@ -314,20 +275,6 @@ Whether to use C<[Test::Pod::No404]> in the distribution. Default = 0.
 
 =item *
 
-twitter
-
-Releases of this module should be tweeted. Actually this is not working properly
-since twitter.com moved to mandatory OAuth authetication. Default = 0.
-
-=item *
-
-twitter_tags
-
-Additional hash tags to be used in the release tweet.
-The tags C<#cpan> and C<#perl> are always prepended.
-
-=item *
-
 signature
 
 Whether to GPG sign the module or not. Default = 1.
@@ -354,7 +301,7 @@ variable C<FAKE>. Default = 0.
 =head1 ACKNOWLEDGMENTS
 
 Much of the first implementation was shamelessly copied from
-L<Dist::Zilla::PluginBundle::Author::DOHERTY>.
+C<Dist::Zilla::PluginBundle::Author::DOHERTY>.
 
 =head1 SEE ALSO
 

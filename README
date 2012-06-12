@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.017
+    version 0.018
 
 SYNOPSIS
             # in dist.ini
@@ -14,8 +14,6 @@ SYNOPSIS
             ; github = 1
             ; use_no404 = 0
             ; task_weaver = 0
-            ; twitter = 0
-            ; twitter_tags = <empty>
             ; signature = 1
 
 DESCRIPTION
@@ -51,11 +49,6 @@ DESCRIPTION
 
             ; endif
 
-            [Twitter]
-            tweet_url = http://search.cpan.org/~{{$AUTHOR_LC}}/{{$DIST}}
-            hash_tags = #perl #cpan             ; plus tags in twitter_tags
-            url_shortener = TinyURL
-
             [Signature]                         ; if signature = 1
             [@Git]
 
@@ -82,17 +75,6 @@ USAGE
         Whether to use "[Test::Pod::No404]" in the distribution. Default =
         0.
 
-    *   twitter
-
-        Releases of this module should be tweeted. Actually this is not
-        working properly since twitter.com moved to mandatory OAuth
-        authetication. Default = 0.
-
-    *   twitter_tags
-
-        Additional hash tags to be used in the release tweet. The tags
-        "#cpan" and "#perl" are always prepended.
-
     *   signature
 
         Whether to GPG sign the module or not. Default = 1.
@@ -111,7 +93,7 @@ USAGE
 
 ACKNOWLEDGMENTS
     Much of the first implementation was shamelessly copied from
-    Dist::Zilla::PluginBundle::Author::DOHERTY.
+    "Dist::Zilla::PluginBundle::Author::DOHERTY".
 
 SEE ALSO
     Please see those modules/websites for more information related to this
