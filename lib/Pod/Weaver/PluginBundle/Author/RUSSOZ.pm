@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Pod::Weaver configuration the way RUSSOZ does it
-our $VERSION = '0.018';    # VERSION
+our $VERSION = '0.019';    # VERSION
 
 use Pod::Weaver::Config::Assembler;
 
@@ -14,7 +14,9 @@ use Pod::Weaver::Section::Support 1.003;
 use Pod::Weaver::Section::WarrantyDisclaimer 0.103511;
 use Pod::Weaver::Plugin::Encoding 0.01;
 
-sub _exp { Pod::Weaver::Config::Assembler->expand_package( $_[0] ) } ## no critic
+sub _exp {                 ## no critic
+    Pod::Weaver::Config::Assembler->expand_package( $_[0] );
+}
 
 use namespace::clean;
 
@@ -112,7 +114,7 @@ Pod::Weaver::PluginBundle::Author::RUSSOZ - Pod::Weaver configuration the way RU
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =for Pod::Coverage mvp_bundle_config
 
@@ -171,4 +173,5 @@ DAMAGES.
 
 
 __END__
+
 

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.018';    # VERSION
+our $VERSION = '0.019';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -160,7 +160,7 @@ sub configure {
 
         $self->add_plugins('Test::UseAllModules');
         $self->add_bundle( 'TestingMania' =>
-              { disable => q{Test::CPAN::Changes,Test::Synopsis}, } );
+              { disable => [ 'Test::CPAN::Changes', 'Test::Synopsis' ], } );
         $self->add_plugins('Test::Pod::No404s')
           if ( $self->use_no404 || $ENV{NO404} );
     }
@@ -188,7 +188,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.018
+version 0.019
 
 =head1 SYNOPSIS
 
@@ -470,4 +470,5 @@ DAMAGES.
 
 
 __END__
+
 

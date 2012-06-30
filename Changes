@@ -1,6 +1,14 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
+v0.019 2012-06-30
+-----------------
+
+commit 9ce34a5e0658eca3dca4b23c40b9b4d49196c156
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    adjustments to other modules' updates
+
 v0.018 2012-06-12
 -----------------
 
@@ -63,46 +71,6 @@ commit e0944a66331e46c917483439239c10bbf5851261
 Author: Alexei Znamensky <russoz@cpan.org>
 
     renamed the no404 attr to use_no404
-
-v0.012 2011-06-30
------------------
-
-commit e7d2bd904adee5e96eba2ecb69b4755fbc6bc227
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    added plugin Test::UseAllModules
-
-v0.011 2011-06-24
------------------
-
-commit 0d1c9243d2a506495d6315db2db78cee6833b531
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    Multiple changes, version++
-
-v0.010 2011-06-23
------------------
-
-commit 0c4a87d9ff82099f9d51d56a24988524aa2569d0
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    default is not to test HTTP 404 in POD links
-
-v0.009 2011-06-20
------------------
-
-commit 228e666ba954358d79104966d5103b46cbcf613b
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    added Test::Pod::No404s, version++
-
-v0.008 2011-06-20
------------------
-
-commit 548bcf212776dcd5f2114bb59dea5686615eddbb
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    added GithubMeta, version++
 
 ===================================
 End of changes in the last 365 days
