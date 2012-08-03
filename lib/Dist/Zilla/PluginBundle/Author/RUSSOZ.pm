@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: configure Dist::Zilla like RUSSOZ
-our $VERSION = '0.019';    # VERSION
+our $VERSION = '0.020';    # VERSION
 
 use Moose 0.99;
 use namespace::autoclean 0.09;
@@ -116,6 +116,17 @@ has signature => (
     },
 );
 
+has report => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub {
+        ( defined $_[0]->payload->{report} and $_[0]->payload->{report} == 1 )
+          ? 1
+          : 0;
+    },
+);
+
 sub configure {
     my $self = shift;
 
@@ -165,8 +176,9 @@ sub configure {
           if ( $self->use_no404 || $ENV{NO404} );
     }
 
-    $self->add_plugins('Signature') if $self->signature;
-    $self->add_bundle('Git')        if $self->git;
+    $self->add_plugins('Signature')   if $self->signature;
+    $self->add_plugins('ReportPhase') if $self->report;
+    $self->add_bundle('Git')          if $self->git;
 
     return;
 }
@@ -188,7 +200,7 @@ Dist::Zilla::PluginBundle::Author::RUSSOZ - configure Dist::Zilla like RUSSOZ
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 SYNOPSIS
 
@@ -201,6 +213,7 @@ version 0.019
 	; use_no404 = 0
 	; task_weaver = 0
 	; signature = 1
+	; report = 0
 
 =head1 DESCRIPTION
 
@@ -237,6 +250,7 @@ a L<Dist::Zilla> configuration approximately like:
 	; endif
 
 	[Signature]                         ; if signature = 1
+	[ReportPhase]                       ; if report = 1
 	[@Git]
 
 =head1 USAGE
@@ -275,12 +289,6 @@ Whether to use C<[Test::Pod::No404]> in the distribution. Default = 0.
 
 =item *
 
-signature
-
-Whether to GPG sign the module or not. Default = 1.
-
-=item *
-
 task_weaver
 
 Set to 1 if this is a C<Task::> distribution. It will enable C<[TaskWeaver]>
@@ -293,6 +301,18 @@ fake
 Set to 1 if this is a fake release. It will disable [UploadToCPAN] and
 enable [FakeRelease]. It can also be enabled by setting the environemnt
 variable C<FAKE>. Default = 0.
+
+=item *
+
+signature
+
+Whether to GPG sign the module or not. Default = 1.
+
+=item *
+
+report
+
+Whether to report the Dist::Zilla building phases. Default = 0.
 
 =back
 

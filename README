@@ -3,7 +3,7 @@ NAME
     RUSSOZ
 
 VERSION
-    version 0.019
+    version 0.020
 
 SYNOPSIS
             # in dist.ini
@@ -15,6 +15,7 @@ SYNOPSIS
             ; use_no404 = 0
             ; task_weaver = 0
             ; signature = 1
+            ; report = 0
 
 DESCRIPTION
     "Dist::Zilla::PluginBundle::Author::RUSSOZ" provides shorthand for a
@@ -50,6 +51,7 @@ DESCRIPTION
             ; endif
 
             [Signature]                         ; if signature = 1
+            [ReportPhase]                       ; if report = 1
             [@Git]
 
 USAGE
@@ -75,10 +77,6 @@ USAGE
         Whether to use "[Test::Pod::No404]" in the distribution. Default =
         0.
 
-    *   signature
-
-        Whether to GPG sign the module or not. Default = 1.
-
     *   task_weaver
 
         Set to 1 if this is a "Task::" distribution. It will enable
@@ -90,6 +88,14 @@ USAGE
         Set to 1 if this is a fake release. It will disable [UploadToCPAN]
         and enable [FakeRelease]. It can also be enabled by setting the
         environemnt variable "FAKE". Default = 0.
+
+    *   signature
+
+        Whether to GPG sign the module or not. Default = 1.
+
+    *   report
+
+        Whether to report the Dist::Zilla building phases. Default = 0.
 
 ACKNOWLEDGMENTS
     Much of the first implementation was shamelessly copied from

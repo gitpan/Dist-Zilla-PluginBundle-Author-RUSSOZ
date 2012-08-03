@@ -28,6 +28,7 @@ requires:
   Dist::Zilla::Plugin::PerlTidy: 0.11
   Dist::Zilla::Plugin::PodWeaver: 0
   Dist::Zilla::Plugin::ReadmeFromPod: 0
+  Dist::Zilla::Plugin::ReportPhases: 0
   Dist::Zilla::Plugin::ReportVersions::Tiny: 0
   Dist::Zilla::Plugin::Signature: 0
   Dist::Zilla::Plugin::TaskWeaver: 0
@@ -43,6 +44,7 @@ requires:
   Pod::Weaver::Config::Assembler: 0
   Pod::Weaver::Plugin::Encoding: 0.01
   Pod::Weaver::Plugin::EnsureUniqueSections: 0
+  Pod::Weaver::Section::BugsAndLimitations: 0
   Pod::Weaver::Section::SeeAlso: 1.002
   Pod::Weaver::Section::Support: 1.003
   Pod::Weaver::Section::WarrantyDisclaimer: 0.103511
@@ -54,4 +56,4 @@ requires:
 resources:
   homepage: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ
   repository: https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ.git
-version: 0.019
+version: 0.020

@@ -1,7 +1,15 @@
 Revision History for Dist-Zilla-PluginBundle-Author-RUSSOZ
 ==========================================================
 
-v0.019 2012-06-30
+v0.020 2012-08-03
+-----------------
+
+commit f1534956f7b7c98086b046f2026ea3209e8e26d9
+Author: Alexei Znamensky <russoz@cpan.org>
+
+    New option report and added dependency
+
+v0.019 2012-06-29
 -----------------
 
 commit 9ce34a5e0658eca3dca4b23c40b9b4d49196c156
@@ -42,35 +50,6 @@ commit 394fadfc66dc9405f8a9bca6c819cef8d1048a5f
 Author: Alexei Znamensky <russoz@cpan.org>
 
     added twitter tags when releasing
-
-v0.015 2011-07-21
------------------
-
-commit 41765e29f613b0f0f44d68000ef9c05de88bcc9a
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    [PerlTidy] 0.11 fixes a problem with ReportVersions::Tiny
-
-v0.014 2011-07-18
------------------
-
-commit 56840e7b637d3c5dd4214055f1d9c6c28e27d499
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    added version from module
-
-v0.013 2011-07-18
------------------
-
-commit 977a08fa46f43d6181a97fa220380a9338e85801
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    added version and fake-release functionalities
-
-commit e0944a66331e46c917483439239c10bbf5851261
-Author: Alexei Znamensky <russoz@cpan.org>
-
-    renamed the no404 attr to use_no404
 
 ===================================
 End of changes in the last 365 days
