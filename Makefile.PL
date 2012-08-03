@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::PerlTidy" => "0.11",
     "Dist::Zilla::Plugin::PodWeaver" => 0,
     "Dist::Zilla::Plugin::ReadmeFromPod" => 0,
-    "Dist::Zilla::Plugin::ReportPhases" => 0,
+    "Dist::Zilla::Plugin::ReportPhase" => 0,
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => 0,
     "Dist::Zilla::Plugin::Signature" => 0,
     "Dist::Zilla::Plugin::TaskWeaver" => 0,
@@ -62,7 +62,7 @@ my %WriteMakefileArgs = (
     "version" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.020",
+  "VERSION" => "0.021",
   "test" => {
     "TESTS" => "t/*.t"
   }
