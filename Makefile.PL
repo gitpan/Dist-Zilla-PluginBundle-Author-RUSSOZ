@@ -56,13 +56,15 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::Section::SeeAlso" => "1.002",
     "Pod::Weaver::Section::Support" => "1.003",
     "Pod::Weaver::Section::WarrantyDisclaimer" => "0.103511",
+    "Test::CPAN::Meta::JSON" => 0,
+    "Test::Pod::Coverage" => 0,
     "namespace::autoclean" => "0.09",
     "namespace::clean" => 0,
     "strict" => 0,
     "version" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.021",
+  "VERSION" => "0.022",
   "test" => {
     "TESTS" => "t/*.t"
   }

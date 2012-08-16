@@ -52,6 +52,8 @@
             "Pod::Weaver::Section::SeeAlso" : "1.002",
             "Pod::Weaver::Section::Support" : "1.003",
             "Pod::Weaver::Section::WarrantyDisclaimer" : "0.103511",
+            "Test::CPAN::Meta::JSON" : "0",
+            "Test::Pod::Coverage" : "0",
             "namespace::autoclean" : "0.09",
             "namespace::clean" : "0",
             "strict" : "0",
@@ -78,6 +80,6 @@
          "web" : "https://github.com/russoz/Dist-Zilla-PluginBundle-Author-RUSSOZ"
       }
    },
-   "version" : "0.021"
+   "version" : "0.022"
 }
 
